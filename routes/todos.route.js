@@ -6,7 +6,7 @@ import { checkAdmin } from '../middleware/checkAdmin.js';
 const router = express.Router();
 
 // GET method
-router.get('/', protectRoute, getAllTodos);
+router.get('/', getAllTodos);
 
 // GET by id method
 router.get('/todo/:id', getTodoById);
@@ -18,7 +18,7 @@ router.post('/add', createTodo);
 router.put('/edit/:id', updateTodo);
 
 // DELETE method
-router.delete('/delete/:id', protectRoute, checkAdmin, deleteTodo);
+router.delete('/delete/:id', deleteTodo);
 
 
 export default router

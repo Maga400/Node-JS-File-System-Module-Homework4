@@ -1,5 +1,5 @@
 import { Todo } from "../models/todo.model.js";
-import writeLog from "../utils/fsProcess.js";
+import { writeLog } from "../utils/fsProcess.js";
 
 export const getAllTodos = async (req, res) => {
   try {

@@ -2,7 +2,7 @@ import { error } from "console";
 import fs from "fs";
 
 export const writeLog = (status, message, path) => {
-  const exist = fs.existsSync("../log.txt", (error) => {
+  const exist = fs.existsSync("././log.txt", (error) => {
     if (error) {
       console.error("Error checking file existence:", error);
       return;
@@ -11,9 +11,9 @@ export const writeLog = (status, message, path) => {
     return true;
   });
 
-  if (fileExist) {
+  if (exist) {
     fs.appendFile(
-      "../log.txt",
+      "././log.txt",
       `\n${path} => ${status} => ${message}`,
       (error) => {
         if (error) {
@@ -26,7 +26,7 @@ export const writeLog = (status, message, path) => {
     console.log("Log append successfully");
   } else {
     fs.writeFile(
-      "../log.txt",
+      "././log.txt",
       `${path} => ${status} => ${message}`,
       (error) => {
         if (error) {
